@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import Banner from './components/Banner';
 import Inicio from './components/Inicio';
 import './index.css';
 
@@ -8,7 +9,6 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <h1>Bem vindo ao futuro site de filmes</h1>
-    <Inicio />
+    <Banner />
   </React.StrictMode>
 );
