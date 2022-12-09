@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { RecoilRoot } from 'recoil';
 import Banner from './components/Banner';
 import Inicio from './components/Inicio';
 import './index.css';
@@ -9,6 +10,8 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <Banner />
+    <RecoilRoot>
+      <Banner />
+    </RecoilRoot>
   </React.StrictMode>
 );

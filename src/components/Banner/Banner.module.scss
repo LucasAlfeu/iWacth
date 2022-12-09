@@ -1,0 +1,20 @@
+.banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    position: relative;
+    z-index: -100;
+    color: #ffffff;
+    &__img{
+        position: absolute;
+        z-index: -1000;
+        width: 100%;
+    }
+    &__title{
+        font-size: 32px;
+    }
+    &__overview{
+        width: 600px;
+        margin-left: 3rem;
+    }
+}
