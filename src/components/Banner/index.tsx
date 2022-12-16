@@ -22,7 +22,7 @@ export default function Banner() {
     const backdropTreendingMovie = useRecoilState(useBackdropState)
     const voteAverageTreendingMovie = useRecoilState(useVoteAverageState)
 
-    const backdrop = `https://image.tmdb.org/t/p/original/${backdropTreendingMovie[0]}`   
+    const backdrop = `https://image.tmdb.org/t/p/original/${backdropTreendingMovie[0]}`
 
     useEffect(() => {
         treendingMovie()
@@ -31,9 +31,12 @@ export default function Banner() {
     return (
         <section className={styles.banner}>
             <div className={styles.banner__container}>
-                <h2 className={styles.banner__title}>{TitleTreendingMovie[0]}</h2>
-                <p className={styles.banner__overview}>{overviewTreendingMovie[0]}</p>
-                <button className={styles.banner__moreInformation}>Saiba Mais</button>
+                <div>                
+                    <h2 className={styles.banner__title}>{TitleTreendingMovie[0]}</h2>
+                    <p className={styles.banner__overview}>{overviewTreendingMovie[0]}</p>
+                    <button className={styles.banner__moreInformation}>Saiba Mais</button>
+                </div>
+                <span className={styles.banner__span}><a href="#" className={styles.banner__link}>Destaques</a></span>
             </div>
             <img className={styles.banner__img} src={backdrop} alt="Poster do filme" />
         </section>
