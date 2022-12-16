@@ -8,11 +8,10 @@
         position: relative;
         z-index: -100;           
         &__img{
-            box-sizing: border-box;
             height: inherit;
             position: absolute;
             object-fit: cover;
-            width: 100%;   
+            width: 100vw;   
             z-index: -1000;
         }
         &__container{
@@ -20,6 +19,7 @@
             display: flex;
             justify-content: space-between;
             padding: 1rem 2rem;
+            width: auto;
         }
         &__title{
             font-size: 24px;

@@ -13,6 +13,7 @@ root.render(
   <React.StrictMode>
     <RecoilRoot>
       <Menu />
+      <Banner />
     </RecoilRoot>
   </React.StrictMode>
 );
