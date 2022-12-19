@@ -1,17 +1,18 @@
 import React, { useEffect } from "react";
-import { useRecoilState, useSetRecoilState } from "recoil";
+import { useRecoilState } from "recoil";
 import { useBackdropState, useOverviewState, useTitleState, useVoteAverageState } from "../../state/atom";
 import styles from './Banner.module.scss'
 import useTreendingMovie from "state/hook/useTreendingMovie";
+import { Link } from "react-router-dom";
 
-interface IMovies {
-    title: string,
-    overview?: string,
-    backdrop: string,
-    poster?: string,
-    voteAverage?: number
-    data?: string
-}
+// interface IMovies {
+//     title: string,
+//     overview?: string,
+//     backdrop: string,
+//     poster?: string,
+//     voteAverage?: number
+//     data?: string
+// }
 
 export default function Banner() {
 
@@ -36,7 +37,7 @@ export default function Banner() {
                     <p className={styles.banner__overview}>{overviewTreending[0]}</p>
                     <button className={styles.banner__moreInformation}>Saiba Mais</button>
                 </div>
-                <span className={styles.banner__span}><a href="#" className={styles.banner__link}>Destaques</a></span>
+                <span className={styles.banner__span}><Link to={'#'} className={styles.banner__link}>Destaques</Link></span>
             </div>
             <img className={styles.banner__img} src={backdrop} alt="Poster do filme" />
         </section>

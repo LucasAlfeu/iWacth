@@ -1,18 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from './Menu.module.scss'
 import classNames from "classnames";
 import { AiOutlineMenu, AiOutlineCloseCircle } from "react-icons/ai";
 import { Link } from 'react-router-dom'
+import { useHideBtnMobileState } from "state/atom";
+import { useRecoilValue } from "recoil";
+import useMenuMobile from "state/hook/useMenuMobile";
 
 export default function Menu() {
-    const [isOpen, setIsOpen] = useState<boolean>(false)
-    const btn = document.getElementById('button') as HTMLElement
-    const exists = document.body.contains(btn)
-
-    const toggleMenu = (e: React.TouchEvent<HTMLButtonElement>) => {
-        setIsOpen(!isOpen)
-        !isOpen ? e.currentTarget.setAttribute('aria-expanded', 'true') : e.currentTarget.setAttribute('aria-expanded', 'false')
-    }
+    const isOpen = useRecoilValue(useHideBtnMobileState)
+    const { exists, toggleMenu } = useMenuMobile()
+    
     return (
         <header className={styles.header} >
             <h1 className={styles.header__title}>iWatch</h1>
