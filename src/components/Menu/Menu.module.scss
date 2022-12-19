@@ -19,7 +19,16 @@
             display: block;
         }
         &__menu{
-            display: none;
+            display: block;
+            position: absolute;
+            width: auto;
+            padding: 1rem;
+            top: 45px;
+            right: 20px;
+            list-style: none;
+            background: #0000009d;
+            border: none;
+            border-radius: 10px;
         }
     }
     

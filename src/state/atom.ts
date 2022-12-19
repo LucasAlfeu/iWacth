@@ -29,3 +29,7 @@ export const useVoteAverageState = atom<string>({
     key: 'useVoteAverageState',
     default: ''
 })
+export const useHideBtnMobileState = atom<boolean>({
+    key: 'useHideBtnMobileState',
+    default: false
+})
