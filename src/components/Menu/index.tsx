@@ -14,7 +14,7 @@ export default function Menu() {
         !isOpen ? e.currentTarget.setAttribute('aria-expanded', 'true') : e.currentTarget.setAttribute('aria-expanded', 'false')
     }
     return (
-        <header className={styles.header}>
+        <header className={styles.header} >
             <h1 className={styles.header__title}>iWatch</h1>
             <nav className={styles.header__nav} id='nav'>
                 <button
