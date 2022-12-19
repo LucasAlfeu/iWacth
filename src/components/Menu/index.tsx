@@ -1,25 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from './Menu.module.scss'
+import classNames from "classnames";
+import { AiOutlineMenu, AiOutlineCloseCircle } from "react-icons/ai";
 
 export default function Menu() {
-    const menu = document.getElementById('menu') as HTMLElement
+    const [isOpen, setIsOpen] = useState<boolean>(false)
 
     const toggleMenu =() => {
-        if(menu.style.display == 'none'){
-            menu.style.display = 'block'
-        } else {
-            menu.style.display = 'none'
-        }
+        setIsOpen(!isOpen)
     }
     return (
         <header className={styles.header}>
             <h1 className={styles.header__title}>iWatch</h1>
             <nav className={styles.header__nav} id='nav'>
-                <button className={styles.header__btnMobile} onClick={() => toggleMenu()}>Menu</button>
-                <ul className={styles.header__menu} id='menu'>
+                <button className={styles.header__btnMobile} onClick={() => toggleMenu()}>{!isOpen ? <AiOutlineMenu /> : <AiOutlineCloseCircle />}</button>
+                <ul className={classNames({
+                    [styles.disable]: isOpen === false,
+                    [styles.active]: isOpen === true
+                })}>
                     <li className={styles.header__item}>Filmes</li>
                     <li className={styles.header__item}>Séries</li>
-                    <li className={styles.header__item}>Minha Lista</li>
+                    <li className={styles.header__item}>Favoritos</li>
                 </ul>
             </nav>
         </header>

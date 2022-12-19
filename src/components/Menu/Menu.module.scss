@@ -17,18 +17,49 @@
         }
         &__btnMobile{
             display: block;
+            background: none;
+            border: none;
+            color: #ffffff;
+            transform: scale(180%);
         }
-        &__menu{
+        &__item{
+            margin: 1rem;
+            border-bottom: 1px solid #3a3a3a;
+        }
+        .disable {
+            visibility: hidden;
             display: block;
             position: absolute;
             width: auto;
-            padding: 1rem;
             top: 45px;
-            right: 20px;
-            list-style: none;
-            background: #0000009d;
+            right: 0;
+            height: 0;
             border: none;
             border-radius: 10px;
+            width: 100vw;
+            padding: 0;
+            
+        }
+        .active {
+            display: block;
+            position: absolute;
+            width: auto;
+            top: 45px;
+            right: 0;
+            list-style: none;
+            text-align: center;
+            background: #000000ce;
+            border: none;
+            border-radius: 10px;
+            width: 100vw;
+            padding: 0;
+            z-index: 1000;
+            transition: .6s;
+            visibility: visible;
+            height: 50vh;
+            backdrop-filter: blur(3px);
+            overflow-y: hidden;
+            overflow-y: auto;
         }
     }
     
