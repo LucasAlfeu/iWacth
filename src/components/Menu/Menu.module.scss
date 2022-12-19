@@ -16,51 +16,49 @@
             font-weight: bold;
         }
         &__btnMobile{
-            display: block;
             background: none;
             border: none;
             color: #ffffff;
+            display: block;
             transform: scale(180%);
         }
         &__item{
-            margin: 1rem;
             border-bottom: 1px solid #3a3a3a;
+            margin: 1rem;
         }
-        .disable {
-            visibility: hidden;
-            display: block;
-            position: absolute;
-            width: auto;
-            top: 45px;
-            right: 0;
-            height: 0;
-            border: none;
-            border-radius: 10px;
-            width: 100vw;
-            padding: 0;
-            
-        }
-        .active {
-            display: block;
-            position: absolute;
-            width: auto;
-            top: 45px;
-            right: 0;
-            list-style: none;
-            text-align: center;
-            background: #000000ce;
-            border: none;
-            border-radius: 10px;
-            width: 100vw;
-            padding: 0;
-            z-index: 1000;
-            transition: .6s;
-            visibility: visible;
-            height: 50vh;
-            backdrop-filter: blur(3px);
-            overflow-y: hidden;
-            overflow-y: auto;
-        }
+    }
+    .disable {
+        border: none;
+        border-radius: 10px;
+        display: block;
+        height: 0;
+        padding: 0;
+        position: absolute;
+        right: 0;
+        top: 45px;
+        visibility: hidden;
+        width: 100vw;
+        
+    }
+    .active {
+        backdrop-filter: blur(3px);
+        background: #000000ce;
+        border: none;
+        border-radius: 10px;
+        display: block;
+        height: 50vh;
+        list-style: none;
+        overflow-y: hidden;
+        overflow-y: auto;
+        padding: 0;
+        position: absolute;
+        right: 0;
+        text-align: center;
+        top: 45px;
+        transition: .6s;
+        visibility: visible;
+        width: 100vw;
+        z-index: 1000;
     }
     
 }
