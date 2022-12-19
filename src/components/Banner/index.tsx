@@ -17,12 +17,12 @@ export default function Banner() {
 
     const { treendingMovie } = useTreendingMovie()
 
-    const TitleTreendingMovie = useRecoilState(useTitleState)
-    const overviewTreendingMovie = useRecoilState(useOverviewState)
-    const backdropTreendingMovie = useRecoilState(useBackdropState)
-    const voteAverageTreendingMovie = useRecoilState(useVoteAverageState)
+    const TitleTreending = useRecoilState(useTitleState)
+    const overviewTreending = useRecoilState(useOverviewState)
+    const backdropTreending = useRecoilState(useBackdropState)
+    const voteAverageTreending = useRecoilState(useVoteAverageState)
 
-    const backdrop = `https://image.tmdb.org/t/p/original/${backdropTreendingMovie[0]}`
+    const backdrop = `https://image.tmdb.org/t/p/original/${backdropTreending[0]}`
 
     useEffect(() => {
         treendingMovie()
@@ -32,8 +32,8 @@ export default function Banner() {
         <section className={styles.banner}>
             <div className={styles.banner__container}>
                 <div>                
-                    <h2 className={styles.banner__title}>{TitleTreendingMovie[0]}</h2>
-                    <p className={styles.banner__overview}>{overviewTreendingMovie[0]}</p>
+                    <h2 className={styles.banner__title}>{TitleTreending[0]}</h2>
+                    <p className={styles.banner__overview}>{overviewTreending[0]}</p>
                     <button className={styles.banner__moreInformation}>Saiba Mais</button>
                 </div>
                 <span className={styles.banner__span}><a href="#" className={styles.banner__link}>Destaques</a></span>

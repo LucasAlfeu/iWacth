@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from './Menu.module.scss'
 import classNames from "classnames";
 import { AiOutlineMenu, AiOutlineCloseCircle } from "react-icons/ai";
-import { stringify } from "querystring";
+import { Link } from 'react-router-dom'
 
 export default function Menu() {
     const [isOpen, setIsOpen] = useState<boolean>(false)
@@ -31,9 +31,9 @@ export default function Menu() {
                     [styles.active]: isOpen === true,
                     [styles.menu]: !exists
                 })}>
-                    <li className={styles.header__item}>Filmes</li>
-                    <li className={styles.header__item}>Séries</li>
-                    <li className={styles.header__item}>Favoritos</li>
+                    <li className={styles.header__item}><Link className={styles.header__link} to={"/"}>Filmes</Link></li>
+                    <li className={styles.header__item}><Link className={styles.header__link} to={"/tv"}>Séries</Link></li>
+                    <li className={styles.header__item}><Link className={styles.header__link} to={"/favoritos"}>Favoritos</Link></li>
                 </ul>
             </nav>
         </header>

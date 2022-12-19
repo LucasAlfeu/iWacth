@@ -26,6 +26,11 @@
             border-bottom: 1px solid #3a3a3a;
             margin: 1rem;
         }
+        &__link{
+            color: #ffffff;
+            font-weight: 500;
+            text-decoration: none;
+        }
     }
     .disable {
         border: none;
@@ -90,6 +95,11 @@
         &__item:hover{
             border-bottom: 2px solid #ffffff;
         }
+        &__link{
+            color: #ffffff;
+            font-weight: 500;
+            text-decoration: none;
+        }
     }
     .menu{
         display: flex;
@@ -133,6 +143,11 @@
         }
         &__item:hover{
             border-bottom: 2px solid #ffffff;
+        }
+        &__link{
+            color: #ffffff;
+            font-weight: 500;
+            text-decoration: none;
         }
     }
     .menu{
