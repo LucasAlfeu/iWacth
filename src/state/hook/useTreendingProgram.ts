@@ -35,7 +35,6 @@ const useTreendingProgram = () => {
                 setOverviewTreendingProgram(treendingProgram.overview)
                 setBackdropTreendingProgram(treendingProgram.backdrop_path)
                 setVoteAverageTreendingProgram(treendingProgram.vote_average)
-                console.log(res.data.results)
             })
             .catch((erro) => {
                 console.log(erro)

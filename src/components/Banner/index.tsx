@@ -5,15 +5,6 @@ import styles from './Banner.module.scss'
 import useTreendingProgram from "state/hook/useTreendingProgram";
 import { Link } from "react-router-dom";
 
-// interface IMovies {
-//     title: string,
-//     overview?: string,
-//     backdrop: string,
-//     poster?: string,
-//     voteAverage?: number
-//     data?: string
-// }
-
 export default function Banner() {
 
     const { treendingProgram, location } = useTreendingProgram()

@@ -1,3 +1,4 @@
+import { IMovieList } from 'interface/IMovieList'
 import { atom } from 'recoil'
 
 export const useBackdropState = atom<string>({
@@ -32,4 +33,9 @@ export const useVoteAverageState = atom<string>({
 export const useHideBtnMobileState = atom<boolean>({
     key: 'useHideBtnMobileState',
     default: false
+})
+
+export const useMovieList = atom<IMovieList[]>({
+    key: 'useMovieList',
+    default: []
 })
