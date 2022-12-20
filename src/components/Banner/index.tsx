@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import { useBackdropState, useOverviewState, useTitleState, useVoteAverageState } from "../../state/atom";
 import styles from './Banner.module.scss'
-import useTreendingMovie from "state/hook/useTreendingMovie";
+import useTreendingProgram from "state/hook/useTreendingProgram";
 import { Link } from "react-router-dom";
 
 // interface IMovies {
@@ -16,18 +16,18 @@ import { Link } from "react-router-dom";
 
 export default function Banner() {
 
-    const { treendingMovie } = useTreendingMovie()
+    const { treendingProgram, location } = useTreendingProgram()
 
     const TitleTreending = useRecoilState(useTitleState)
     const overviewTreending = useRecoilState(useOverviewState)
     const backdropTreending = useRecoilState(useBackdropState)
-    const voteAverageTreending = useRecoilState(useVoteAverageState)
+    const voteAverageTreending = useRecoilState(useVoteAverageState) 
 
     const backdrop = `https://image.tmdb.org/t/p/original/${backdropTreending[0]}`
 
     useEffect(() => {
-        treendingMovie()
-    }, [])
+        treendingProgram()
+    }, [location.pathname])
 
     return (
         <section className={styles.banner}>
