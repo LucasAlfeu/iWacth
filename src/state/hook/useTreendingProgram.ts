@@ -17,20 +17,18 @@ const useTreendingProgram = () => {
         return Number(numeroAleatorio.toFixed(0));
     }
 
-    console.log(numero(0,20))
-
-    let baseUrl: string = ''
+    let whereWatch: string = ''
 
     if (location.pathname === '/') {
-        baseUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${env.API_KEY}&language=pt-BR`
+        whereWatch = 'movie'
     } else if (location.pathname === '/tv'){
-        baseUrl = `https://api.themoviedb.org/3/tv/top_rated?api_key=${env.API_KEY}&language=pt-BR`
+        whereWatch = 'tv'
     } else {
-        baseUrl = 'favorite'
+        whereWatch = 'favorite'
     } 
 
     const treendingProgram = () => {
-        axios.get(baseUrl)
+        axios.get(`https://api.themoviedb.org/3/trending/${whereWatch}/week?api_key=${env.API_KEY}&language=pt-BR`)
             .then((res) => {
                 const treendingProgram = res.data.results[numero(0,20)]
                 setTitleTreendingProgram(treendingProgram.title || treendingProgram.name)

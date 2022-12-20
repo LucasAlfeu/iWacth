@@ -21,7 +21,6 @@ export default function Banner() {
     const TitleTreending = useRecoilState(useTitleState)
     const overviewTreending = useRecoilState(useOverviewState)
     const backdropTreending = useRecoilState(useBackdropState)
-    const voteAverageTreending = useRecoilState(useVoteAverageState) 
 
     const backdrop = `https://image.tmdb.org/t/p/original/${backdropTreending[0]}`
 
