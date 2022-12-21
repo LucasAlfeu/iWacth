@@ -8,7 +8,7 @@ export const useBackdropState = atom<string>({
 export const useIdState = atom<number>({
     key: 'useIdState',
     default: 0
- })
+})
 export const useOverviewState = atom<string>({
     key: 'useOverviewState',
     default: ''
@@ -33,6 +33,20 @@ export const useVoteAverageState = atom<string>({
 export const useHideBtnMobileState = atom<boolean>({
     key: 'useHideBtnMobileState',
     default: false
+})
+
+export const useMovie = atom<IMovieList>({
+    key: 'useMovie',
+    default: {
+        backdrop:'',
+        data:'',
+        id: 0,
+        genre_ids: [],
+        overview:'',
+        poster_path: '',
+        title:'',
+        vote_average: 0
+    }
 })
 
 export const useMovieList = atom<IMovieList[]>({
