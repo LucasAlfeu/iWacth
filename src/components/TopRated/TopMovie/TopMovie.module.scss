@@ -1,29 +1,153 @@
-.lista{
-    list-style: none;
-    display: flex;
-    gap: 1rem;
-    overflow-x: scroll;
-    padding: 0 1rem;
-    &__title{
-        width: 120px;
+@media (min-width: 360px) and (max-width: 768px) {
+    .lista{
+        display: flex;
+        gap: 1rem;
+        list-style: none;
+        overflow-x: scroll;
+        padding: 0 1rem;
+        &__title{
+            width: 125px;
+        }
+        &__poster{
+            border-radius: 5px;
+            max-width: 150px;
+            max-height: 190px;
+            object-fit: contain;
+        }
+        &__container{
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 .2rem;
+        }
+        &__span{
+            align-items: center;
+            display: flex;
+            gap: .4rem;
+        }
+        &__star{
+            color: #ee8c09;
+            margin: 0;
+            padding: 0;
+        }
+        
+        &__like{
+            height: 20px;
+            width: 20px;
+        }
+        &__favorite{
+            background: none;
+            border: none;
+            color: #ffffff;
+        }
     }
-    &__poster{
-        max-width: 150px;
-        max-height: 190px;
-        object-fit: contain;
+    .lista::-webkit-scrollbar{
+        height: 4px;
+        background-color: transparent;
+    }
+    .lista::-webkit-scrollbar-thumb{
+        background-color: rgba(255, 255, 255, 0.678);
         border-radius: 5px;
     }
-    &__grafico{
-        color: white;
-        background-color: black;
+}
+@media (min-width: 769px) and (max-width: 1440px) {
+    .lista{
+        display: flex;
+        gap: 1.5rem;
+        list-style: none;
+        overflow-x: scroll;
+        padding: 0 1rem;
+        &__title{
+            width: 120px;
+        }
+        &__poster{
+            height: 290px;
+            object-fit: contain;
+        }
+        &__container{
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            padding: 0;
+        }
+        &__span{
+            align-items: center;
+            display: flex;
+            gap: .4rem;
+        }
+        &__star{
+            color: #ee8c09;
+            height: 16px;
+            margin: 0;
+            padding: 0;
+            width: 16px;
+        }
+        
+        &__like{
+            height: 25px;
+            width: 25px;
+        }
+        &__favorite{
+            background: none;
+            border: none;
+            color: #ffffff;
+        }
+    }
+    .lista::-webkit-scrollbar{
+        height: 4px;
+        background-color: transparent;
+    }
+    .lista::-webkit-scrollbar-thumb{
+        background-color: rgba(255, 255, 255, 0);
+        border-radius: 5px;
     }
 }
-.lista::-webkit-scrollbar{
-    height: 4px;
-    // background-color: #000f26;
-    background-color: transparent;
-}
-.lista::-webkit-scrollbar-thumb{
-    background-color: rgba(255, 255, 255, 0.678);
-    border-radius: 5px;
+@media (min-width: 1441px) {
+    .lista{
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+        overflow-x: scroll;
+        padding: 0 1rem;
+        &__poster{
+            height: 360px;
+            object-fit: contain;
+        }
+        &__container{
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 .5rem;
+        }
+        &__span{
+            align-items: center;
+            display: flex;
+            gap: .8rem;
+        }
+        &__star{
+            color: #ee8c09;
+            height: 25px;
+            margin: 0;
+            padding: 0;
+            width: 25px;
+        }
+        
+        &__like{
+            height: 25px;
+            width: 25px;
+        }
+        &__favorite{
+            background: none;
+            border: none;
+            color: #ffffff;
+        }
+    }
+    .lista::-webkit-scrollbar{
+        height: 10px;
+        background-color: transparent;
+    }
+    .lista::-webkit-scrollbar-thumb{
+        background-color: rgba(255, 255, 255, 0.267);
+        border-radius: 10px;
+    }
 }

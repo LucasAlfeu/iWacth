@@ -34,19 +34,9 @@ export const useHideBtnMobileState = atom<boolean>({
     key: 'useHideBtnMobileState',
     default: false
 })
-
-export const useMovie = atom<IMovieList>({
-    key: 'useMovie',
-    default: {
-        backdrop:'',
-        data:'',
-        id: 0,
-        genre_ids: [],
-        overview:'',
-        poster_path: '',
-        title:'',
-        vote_average: 0
-    }
+export const useFavoriteProgram = atom<number[]>({
+    key: 'useFavoriteProgram',
+    default: []
 })
 
 export const useMovieList = atom<IMovieList[]>({
