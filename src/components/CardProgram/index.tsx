@@ -1,18 +1,23 @@
 import React from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
-import { useFavoriteProgram, useMovieList } from "state/atom";
+import { useFavoriteProgram, useMovieList, useUrlState } from "state/atom";
 import styles from './TopMovie.module.scss'
 import { MdBookmark, MdBookmarkBorder } from "react-icons/md";
 import { AiFillStar } from "react-icons/ai";
 import useTopMovie from "state/hook/useTopMovie";
 
+interface Props {
+    url: string
+}
 
+export default function CardProgram({url}: Props) {
 
-export default function Card() {
+    const setUrlBase = useSetRecoilState(useUrlState)
+    setUrlBase(url)
+
     const movieList = useRecoilValue(useMovieList)
     const favoriteProgram = useRecoilValue(useFavoriteProgram)
-    const { favoritar} = useTopMovie()
-    console.log(favoriteProgram)
+    const { favoritar } = useTopMovie()
 
     return (
         <ul className={styles.lista}>

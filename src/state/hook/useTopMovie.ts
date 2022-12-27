@@ -3,14 +3,16 @@ import { IProgram } from "interface/IProgram"
 import { useEffect } from "react"
 import env from "react-dotenv"
 import { useRecoilValue, useSetRecoilState } from "recoil"
-import { useMovieList, useFavoriteProgram } from "state/atom"
+import { useMovieList, useFavoriteProgram, useUrlState } from "state/atom"
 
 const useTopMovie = () => {
     const setMovieList = useSetRecoilState(useMovieList)
     const setFavoriProgram = useSetRecoilState(useFavoriteProgram)    
     const favoriteProgram = useRecoilValue(useFavoriteProgram)
+
+    const urlBase = useRecoilValue(useUrlState)
     useEffect(() => {
-        axios.get(`https://api.themoviedb.org/3/trending/movie/week?api_key=${env.API_KEY}&language=pt-BR`)
+        axios.get(urlBase)
             .then((res) => {
                 const listaApi = res.data.results             
                 setMovieList(listaApi)
