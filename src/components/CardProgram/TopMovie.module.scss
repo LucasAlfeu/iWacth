@@ -49,6 +49,9 @@
         background-color: rgba(255, 255, 255, 0.678);
         border-radius: 5px;
     }
+    .handleClick{
+        display: none;
+    }
 }
 @media (min-width: 769px) and (max-width: 1440px) {
     .lista{
@@ -101,14 +104,18 @@
         background-color: rgba(255, 255, 255, 0);
         border-radius: 5px;
     }
+    .handleClick{
+        display: none;   
+    }
 }
 @media (min-width: 1441px) {
     .lista{
         display: flex;
         gap: 2rem;
         list-style: none;
-        overflow-x: scroll;
+        overflow-x: auto;
         padding: 0 1rem;
+        scroll-behavior: smooth;
         &__poster{
             height: 360px;
             object-fit: contain;
@@ -147,7 +154,22 @@
         background-color: transparent;
     }
     .lista::-webkit-scrollbar-thumb{
-        background-color: rgba(255, 255, 255, 0.267);
+        background-color: rgba(255, 255, 255, 0);
         border-radius: 10px;
+    }
+    .handleClick{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 3rem;
+        &__button{
+            background: none;
+            border: none;
+            color: #ffffff;
+            cursor: pointer;
+        }
+        &__icon{
+            height: 30px;
+            width: 30px;
+        }
     }
 }
