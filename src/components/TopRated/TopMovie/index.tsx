@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import env from "react-dotenv";
+import React from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { useFavoriteProgram, useMovieList } from "state/atom";
 import styles from './TopMovie.module.scss'
@@ -10,10 +8,11 @@ import useTopMovie from "state/hook/useTopMovie";
 
 
 
-export default function TopMovie() {
+export default function Card() {
     const movieList = useRecoilValue(useMovieList)
-    const movieId = useRecoilValue(useFavoriteProgram)
+    const favoriteProgram = useRecoilValue(useFavoriteProgram)
     const { favoritar} = useTopMovie()
+    console.log(favoriteProgram)
 
     return (
         <ul className={styles.lista}>
@@ -22,8 +21,8 @@ export default function TopMovie() {
                     <img className={styles.lista__poster} src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />
                     <div className={styles.lista__container}>
                         <span className={styles.lista__span}><AiFillStar className={styles.lista__star} />{movie.vote_average.toFixed(1)}</span>
-                        <button className={styles.lista__favorite} onClick={() => favoritar(movie.id)}>
-                            {movieId.find(element => element === movie.id) ? <MdBookmark className={styles.lista__like} /> : <MdBookmarkBorder className={styles.lista__like} />}
+                        <button className={styles.lista__favorite} onClick={() => favoritar(movie)}>
+                            {favoriteProgram.find(element => element === movie) ? <MdBookmark className={styles.lista__like} /> : <MdBookmarkBorder className={styles.lista__like} />}
                         </button>
                     </div>
                 </li>

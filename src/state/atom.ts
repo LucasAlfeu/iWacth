@@ -1,4 +1,4 @@
-import { IMovieList } from 'interface/IMovieList'
+import { IProgram } from 'interface/IProgram'
 import { atom } from 'recoil'
 
 export const useBackdropState = atom<string>({
@@ -34,12 +34,12 @@ export const useHideBtnMobileState = atom<boolean>({
     key: 'useHideBtnMobileState',
     default: false
 })
-export const useFavoriteProgram = atom<number[]>({
+export const useFavoriteProgram = atom<IProgram[]>({
     key: 'useFavoriteProgram',
     default: []
 })
 
-export const useMovieList = atom<IMovieList[]>({
+export const useMovieList = atom<IProgram[]>({
     key: 'useMovieList',
     default: []
 })

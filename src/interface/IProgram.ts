@@ -1,6 +1,6 @@
 import { ApexOptions } from "apexcharts"
 
-export interface IMovieList {
+export interface IProgram {
     backdrop: string,
     data: string,
     id: number,
