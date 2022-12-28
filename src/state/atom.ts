@@ -48,3 +48,8 @@ export const useUrlState = atom<string>({
     key: 'useUrlState',
     default: ''
 })
+
+export const useShowArrowState = atom<boolean>({
+    key: 'useShowArrowState',
+    default: false
+})

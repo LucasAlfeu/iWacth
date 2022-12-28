@@ -1,26 +1,48 @@
 @media (min-width: 360px) and (max-width: 768px) {
-    
-    .handleClick{
+    .handleClick {
+        display: none;
+    }
+
+    .disable {
         display: none;
     }
 }
+
 @media (min-width: 769px) and (max-width: 1440px) {
-    .handleClick{
-        display: none;   
+    .handleClick {
+        display: none;
+    }
+
+    .disable {
+        display: none;
     }
 }
+
 @media (min-width: 1441px) {
-    .handleClick{
+    .disable {
+        display: none;
+    }
+
+    .handleClick {
         display: flex;
         justify-content: space-between;
-        padding: 0 3rem;
-        &__button{
-            background: none;
+        position: relative;
+        // top: -395px;
+        top: -260px;
+        padding: 0 1rem;
+        z-index: 1000;
+
+        &__button {
+            background-color: rgba(0, 0, 0, 0.5);
             border: none;
+            border-radius: 50%;
             color: #ffffff;
+            // padding: 164px 1rem;
+            padding: 1.5rem;
             cursor: pointer;
         }
-        &__icon{
+
+        &__icon {
             height: 30px;
             width: 30px;
         }
