@@ -1,0 +1,28 @@
+@media (min-width: 360px) and (max-width: 768px) {
+    
+    .handleClick{
+        display: none;
+    }
+}
+@media (min-width: 769px) and (max-width: 1440px) {
+    .handleClick{
+        display: none;   
+    }
+}
+@media (min-width: 1441px) {
+    .handleClick{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 3rem;
+        &__button{
+            background: none;
+            border: none;
+            color: #ffffff;
+            cursor: pointer;
+        }
+        &__icon{
+            height: 30px;
+            width: 30px;
+        }
+    }
+}

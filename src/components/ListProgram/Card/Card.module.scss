@@ -42,15 +42,7 @@
         }
     }
     .lista::-webkit-scrollbar{
-        height: 4px;
-        background-color: transparent;
-    }
-    .lista::-webkit-scrollbar-thumb{
-        background-color: rgba(255, 255, 255, 0.678);
-        border-radius: 5px;
-    }
-    .handleClick{
-        display: none;
+       display: none;
     }
 }
 @media (min-width: 769px) and (max-width: 1440px) {
@@ -95,17 +87,9 @@
             border: none;
             color: #ffffff;
         }
-    }
+    }    
     .lista::-webkit-scrollbar{
-        height: 4px;
-        background-color: transparent;
-    }
-    .lista::-webkit-scrollbar-thumb{
-        background-color: rgba(255, 255, 255, 0);
-        border-radius: 5px;
-    }
-    .handleClick{
-        display: none;   
+        display: none;
     }
 }
 @media (min-width: 1441px) {
@@ -150,26 +134,6 @@
         }
     }
     .lista::-webkit-scrollbar{
-        height: 10px;
-        background-color: transparent;
-    }
-    .lista::-webkit-scrollbar-thumb{
-        background-color: rgba(255, 255, 255, 0);
-        border-radius: 10px;
-    }
-    .handleClick{
-        display: flex;
-        justify-content: space-between;
-        padding: 0 3rem;
-        &__button{
-            background: none;
-            border: none;
-            color: #ffffff;
-            cursor: pointer;
-        }
-        &__icon{
-            height: 30px;
-            width: 30px;
-        }
+        display: none;
     }
 }

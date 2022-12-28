@@ -5,7 +5,7 @@ window.env = {
   "BASE_URL": "https://api.themoviedb.org/3/movie/",
   "ChocolateyInstall": "C:\\ProgramData\\chocolatey",
   "ChocolateyLastPathUpdate": "133114546787597973",
-  "CHROME_CRASHPAD_PIPE_NAME": "\\\\.\\pipe\\LOCAL\\crashpad_15348_FCUFXSLILWKDKIBK",
+  "CHROME_CRASHPAD_PIPE_NAME": "\\\\.\\pipe\\LOCAL\\crashpad_11956_ZTVYIKFOTLXXXUWN",
   "COLOR": "1",
   "COLORTERM": "truecolor",
   "CommonProgramFiles": "C:\\Program Files\\Common Files",

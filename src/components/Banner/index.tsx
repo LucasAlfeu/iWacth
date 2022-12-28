@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useRecoilState } from "recoil";
-import { useBackdropState, useOverviewState, useTitleState, useVoteAverageState } from "../../state/atom";
+import { useBackdropState, useOverviewState, useTitleState } from "../../state/atom";
 import styles from './Banner.module.scss'
 import useTreendingProgram from "state/hook/useTreendingProgram";
 import { Link } from "react-router-dom";

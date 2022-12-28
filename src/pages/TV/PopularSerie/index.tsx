@@ -1,4 +1,4 @@
-import CardProgram from 'components/CardProgram';
+import CardProgram from 'components/ListProgram';
 import React from 'react';
 import env from 'react-dotenv';
 

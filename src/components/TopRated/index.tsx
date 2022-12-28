@@ -1,6 +1,6 @@
 import React from "react";
 import env from "react-dotenv";
-import CardProgram from "../CardProgram";
+import CardProgram from "../ListProgram";
 import styles from './TopRated.module.scss'
 
 export default function TopRated(){
