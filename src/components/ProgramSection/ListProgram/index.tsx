@@ -5,7 +5,6 @@ import styles from './ListProgram.module.scss'
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai"
 import Card from "./Card";
 import classNames from "classnames";
-import useListProgram from "state/hook/useListProgram";
 
 interface Props {
     url: string
@@ -13,7 +12,6 @@ interface Props {
 }
 
 export default function ListProgram({ url, title }: Props) { 
-    const { hideArrows, showArrows } = useListProgram()  
 
     const setUrlBase = useSetRecoilState(useUrlState)
     setUrlBase(url)
@@ -28,17 +26,13 @@ export default function ListProgram({ url, title }: Props) {
         e.preventDefault()
         carousel.current!.scrollLeft += carousel.current!.offsetWidth
     }    
-
-    const arrows = useRef(null) 
+ 
     const showArrow = useRecoilValue(useShowArrowState)   
 
     return (
-        <section className={styles.listProgram} onMouseEnter={(e) => showArrows(e)} onMouseLeave={(e) => hideArrows(e)}>
+        <section className={styles.listProgram}>
             <Card title={title} reference={carousel} />
-            <span ref={arrows}  className={classNames({
-                [styles.handleClick]: showArrow === true,
-                [styles.disable]: showArrow === false
-            })}>
+            <span className={styles.handleClick}>
                 <button
                     aria-controls="carrosel"
                     aria-label="move o carrosel de filmes para esquerda"
