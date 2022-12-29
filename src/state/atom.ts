@@ -43,6 +43,10 @@ export const useMovieList = atom<IProgram[]>({
     key: 'useMovieList',
     default: []
 })
+export const useLatestList = atom<IProgram[]>({
+    key: 'useLatestList',
+    default: []
+})
 
 export const useUrlState = atom<string>({
     key: 'useUrlState',

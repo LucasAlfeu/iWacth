@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { useShowArrowState, useUrlState } from "state/atom";
 import styles from './ListProgram.module.scss'
@@ -9,9 +9,10 @@ import useListProgram from "state/hook/useListProgram";
 
 interface Props {
     url: string
+    title: string
 }
 
-export default function ListProgram({ url }: Props) { 
+export default function ListProgram({ url, title }: Props) { 
     const { hideArrows, showArrows } = useListProgram()  
 
     const setUrlBase = useSetRecoilState(useUrlState)
@@ -33,10 +34,10 @@ export default function ListProgram({ url }: Props) {
 
     return (
         <section className={styles.listProgram} onMouseEnter={(e) => showArrows(e)} onMouseLeave={(e) => hideArrows(e)}>
-            <Card reference={carousel} />
+            <Card title={title} reference={carousel} />
             <span ref={arrows}  className={classNames({
-                [styles.handleClick]: showArrow == true,
-                [styles.disable]: showArrow == false
+                [styles.handleClick]: showArrow === true,
+                [styles.disable]: showArrow === false
             })}>
                 <button
                     aria-controls="carrosel"

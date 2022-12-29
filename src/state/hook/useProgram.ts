@@ -2,11 +2,24 @@ import axios from "axios"
 import { IProgram } from "interface/IProgram"
 import { useEffect } from "react"
 import { useRecoilValue, useSetRecoilState } from "recoil"
-import { useMovieList, useFavoriteProgram, useUrlState } from "state/atom"
+import { useMovieList, useFavoriteProgram, useUrlState, useLatestList } from "state/atom"
 
-const useProgram = () => {
+interface IUseProgram {
+    title: string
+}
+
+const useProgram = ({title}: IUseProgram) => {
+
+    
     const setProgramList = useSetRecoilState(useMovieList)
-    const setFavoriteProgram = useSetRecoilState(useFavoriteProgram)    
+    const setLatestList = useSetRecoilState(useLatestList)
+    
+    let listaDeProgramas = setProgramList
+    if (title == 'Lançamentos'){
+        listaDeProgramas = setLatestList
+    }
+
+    const setFavoriteProgram = useSetRecoilState(useFavoriteProgram)
     const favoriteProgram = useRecoilValue(useFavoriteProgram)
 
     const urlBase = useRecoilValue(useUrlState)
@@ -14,7 +27,7 @@ const useProgram = () => {
         axios.get(urlBase)
             .then((res) => {
                 const listaApi = res.data.results             
-                setProgramList(listaApi)
+                listaDeProgramas(listaApi)
             })
             .catch((err) => {
                 console.log(err)

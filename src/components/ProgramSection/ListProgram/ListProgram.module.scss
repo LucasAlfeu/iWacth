@@ -20,7 +20,7 @@
 
 @media (min-width: 1441px) {
     .disable {
-        display: none;
+        opacity: 0;
     }
 
     .handleClick {
@@ -29,7 +29,9 @@
         position: relative;
         // top: -395px;
         top: -260px;
+        margin: 0;
         padding: 0 1rem;
+        opacity: 1;
         z-index: 1000;
 
         &__button {
