@@ -1,5 +1,6 @@
 import { IProgram } from 'interface/IProgram'
 import { atom } from 'recoil'
+import { ObjectFlags } from 'typescript'
 
 export const useBackdropState = atom<string>({
     key: 'useBackdropState',
@@ -64,4 +65,19 @@ export const useUrlState = atom<string>({
 export const useShowArrowState = atom<boolean>({
     key: 'useShowArrowState',
     default: false
+})
+export const useDetailsState = atom<IProgram>({
+    key: 'useDetailsState',
+    default: {
+        backdrop: '',
+        data: '',
+        id: 0,
+        genre_ids: [],
+        overview: '',
+        poster_path: '',
+        backdrop_path: '',
+        release_date: '',
+        title: '',
+        vote_average: 0
+    }
 })

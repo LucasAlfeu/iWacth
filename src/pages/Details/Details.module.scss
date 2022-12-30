@@ -1,0 +1,14 @@
+@media (min-width: 360px) and (max-width: 768px){
+    .backdrop{
+        width: 100vw;
+    }
+    .back{
+        align-items: flex-end;
+        display: flex;
+        margin-left: 1rem;
+        &__arrow{
+            padding-right: .3rem;
+            transform: scale(1.5);
+        }
+    }
+}

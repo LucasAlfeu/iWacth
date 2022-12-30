@@ -1,6 +1,8 @@
+import { IProgram } from "interface/IProgram";
 import React, { RefObject } from "react";
 import { AiFillStar } from "react-icons/ai";
 import { MdBookmark, MdBookmarkBorder } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import { useMovieList, useFavoriteProgram, useLatestList, useOnTheArirtList, useTopRatedList } from "state/atom";
 import useTopMovie from "state/hook/useProgram";
@@ -33,16 +35,21 @@ export default function Card({ reference, title}: ICard) {
     const favoriteProgram = useRecoilValue(useFavoriteProgram)
     const { favoritar } = useTopMovie({title})
 
+    const navigate = useNavigate()
+    const goDetails = (program: IProgram) => {
+        navigate(`/details/${program.id}`, { state: { program }, replace: true });
+    }
+
     return (
         <>
             <ul className={styles.lista} ref={reference}>
-                {listaDeProgramas?.map(movie =>
-                    <li className={styles.lista__movie} key={movie.id}>
-                        <img className={styles.lista__poster} src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />
+                {listaDeProgramas?.map(program =>
+                    <li className={styles.lista__movie} key={program.id}>
+                        <img onClick={() => goDetails(program)} className={styles.lista__poster} src={`https://image.tmdb.org/t/p/original/${program.poster_path}`} alt={program.title} />
                         <div className={styles.lista__container}>
-                            <span className={styles.lista__span}><AiFillStar className={styles.lista__star} />{movie.vote_average.toFixed(1)}</span>
-                            <button className={styles.lista__favorite} onClick={() => favoritar(movie)}>
-                                {favoriteProgram.find(element => element === movie) ? <MdBookmark className={styles.lista__like} /> : <MdBookmarkBorder className={styles.lista__like} />}
+                            <span className={styles.lista__span}><AiFillStar className={styles.lista__star} />{program.vote_average.toFixed(1)}</span>
+                            <button className={styles.lista__favorite} onClick={() => favoritar(program)}>
+                                {favoriteProgram.find(element => element === program) ? <MdBookmark className={styles.lista__like} /> : <MdBookmarkBorder className={styles.lista__like} />}
                             </button>
                         </div>
                     </li>
