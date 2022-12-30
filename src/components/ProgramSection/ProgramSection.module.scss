@@ -23,8 +23,9 @@
 @media (min-width: 1441px) {
     .ProgramSection{
         background: #000f26;
-        padding: 1.75rem 135px;
+        height: 520px;
         margin: 0 ;
+        padding: 1.75rem .5rem  0;
         color: #fff;
         &__titleSection{
             font-size: 3rem;

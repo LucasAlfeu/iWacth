@@ -6,7 +6,7 @@ export default function Movie() {
     return (
         <>
             <ProgramSection title='Destaques da Semana' urlApi={`https://api.themoviedb.org/3/trending/movie/week?api_key=${env.API_KEY}&language=pt-BR`} />
-            <ProgramSection title='Lançamentos' urlApi={`https://api.themoviedb.org/3/movie/upcoming?api_key=${env.API_KEY}&language=pt-BR&page=1`} />
+            <ProgramSection title='Lançamentos' urlApi={`https://api.themoviedb.org/3/movie/upcoming?api_key=${env.API_KEY}&language=pt-BR`} />
         </>
     )
 }
