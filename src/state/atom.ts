@@ -47,6 +47,14 @@ export const useLatestList = atom<IProgram[]>({
     key: 'useLatestList',
     default: []
 })
+export const useOnTheArirtList = atom<IProgram[]>({
+    key: 'useOnTheArirtList',
+    default: []
+})
+export const useTopRatedList = atom<IProgram[]>({
+    key: 'useTopRatedList',
+    default: []
+})
 
 export const useUrlState = atom<string>({
     key: 'useUrlState',

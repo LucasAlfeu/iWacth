@@ -2,7 +2,7 @@ import axios from "axios"
 import { IProgram } from "interface/IProgram"
 import { useEffect } from "react"
 import { useRecoilValue, useSetRecoilState } from "recoil"
-import { useMovieList, useFavoriteProgram, useUrlState, useLatestList } from "state/atom"
+import { useMovieList, useFavoriteProgram, useUrlState, useLatestList, useOnTheArirtList, useTopRatedList } from "state/atom"
 
 interface IUseProgram {
     title: string
@@ -13,10 +13,18 @@ const useProgram = ({title}: IUseProgram) => {
     
     const setProgramList = useSetRecoilState(useMovieList)
     const setLatestList = useSetRecoilState(useLatestList)
+    const setOnTheAirListSeries = useSetRecoilState(useOnTheArirtList)
+    const setTopRatedList = useSetRecoilState(useTopRatedList)
     
     let listaDeProgramas = setProgramList
     if (title == 'Lançamentos'){
         listaDeProgramas = setLatestList
+    }
+    if (title == 'No Ar'){
+        listaDeProgramas = setOnTheAirListSeries
+    }
+    if (title == 'Mais Votados'){
+        listaDeProgramas = setTopRatedList
     }
 
     const setFavoriteProgram = useSetRecoilState(useFavoriteProgram)

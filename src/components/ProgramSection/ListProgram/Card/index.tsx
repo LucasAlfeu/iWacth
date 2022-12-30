@@ -2,7 +2,7 @@ import React, { RefObject } from "react";
 import { AiFillStar } from "react-icons/ai";
 import { MdBookmark, MdBookmarkBorder } from "react-icons/md";
 import { useRecoilValue } from "recoil";
-import { useMovieList, useFavoriteProgram, useLatestList } from "state/atom";
+import { useMovieList, useFavoriteProgram, useLatestList, useOnTheArirtList, useTopRatedList } from "state/atom";
 import useTopMovie from "state/hook/useProgram";
 import styles from "./Card.module.scss"
 
@@ -15,11 +15,20 @@ export default function Card({ reference, title}: ICard) {
     
     const movieList = useRecoilValue(useMovieList)
     const latestList = useRecoilValue(useLatestList)
+    const onTheAirListSeries = useRecoilValue(useOnTheArirtList)
+    const topRatedList = useRecoilValue(useTopRatedList)
     
     let listaDeProgramas = movieList
     if (title == 'Lançamentos'){
         listaDeProgramas = latestList
     }
+    if (title == 'No Ar'){
+        listaDeProgramas = onTheAirListSeries
+    }
+    if (title == 'Mais Votados'){
+        listaDeProgramas = topRatedList
+    }
+    
 
     const favoriteProgram = useRecoilValue(useFavoriteProgram)
     const { favoritar } = useTopMovie({title})
