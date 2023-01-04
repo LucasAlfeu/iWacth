@@ -6,11 +6,18 @@ export interface IProgram {
     data: string,
     id: number,
     genre_ids: number[],
-    genres: ReactNode,
+    genres: [{
+        id: number,
+        name: string
+    }],
     overview: string,
     poster_path: string,
     backdrop_path: string,
     release_date: string,
     title: string,
-    vote_average: number
+    vote_average: number,
+    runtime: number,
+    budget: number,
+    revenue: number
+
 }

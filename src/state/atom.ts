@@ -73,12 +73,22 @@ export const useDetailsState = atom<IProgram>({
         data: '',
         id: 0,
         genre_ids: [],
-        genres: [],
+        genres: [{
+            id: 0,
+            name: ''
+        }],
         overview: '',
         poster_path: '',
         backdrop_path: '',
         release_date: '',
         title: '',
-        vote_average: 0
+        vote_average: 0,
+        runtime: 0,
+        budget: 0,
+        revenue: 0
     }
+})
+export const useGenresListState = atom<string[]>({
+    key: 'useGenresListatate',
+    default: []
 })
