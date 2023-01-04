@@ -11,7 +11,6 @@ export default function AppRoute(){
         <BrowserRouter>                
             <Routes>
                 <Route path='/' element={<Movie />} />
-                <Route path='/tv' element={<Tv />} />
                 <Route path='/favoritos' element={<Favorite />} />
                 <Route path='/details/:id' element={<Details />} />
             </Routes>

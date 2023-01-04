@@ -30,7 +30,6 @@ export default function Menu() {
                     [styles.menu]: !exists
                 })}>
                     <li className={styles.header__item}><Link className={styles.header__link} to={"/"}>Filmes</Link></li>
-                    <li className={styles.header__item}><Link className={styles.header__link} to={"/tv"}>Séries</Link></li>
                     <li className={styles.header__item}><Link className={styles.header__link} to={"/favoritos"}>Favoritos</Link></li>
                 </ul>
             </nav>

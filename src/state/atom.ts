@@ -73,6 +73,7 @@ export const useDetailsState = atom<IProgram>({
         data: '',
         id: 0,
         genre_ids: [],
+        genres: [],
         overview: '',
         poster_path: '',
         backdrop_path: '',
