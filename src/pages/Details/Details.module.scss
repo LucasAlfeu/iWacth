@@ -99,27 +99,30 @@
         flex-direction: column;
         justify-content: center;
         height: auto;
-        margin: 0;
-        padding: 1rem;
+        margin: 2.5rem 100px;
+        padding: 0;
         &__back{
             align-items: flex-end;
-            color: #ffffff;
             background: transparent;
             border: none;
+            color: #ffffff;
             display: flex;
+            font-size: 20px;
             margin-left: 1rem;
-            width: calc(100vw - 1rem);        
+            width: calc(100vw - 150px);        
         }
         &__arrow{
-            padding-right: .3rem;
+            padding-right: .6rem;
             transform: scale(1.5);
         }
         &__poster{
-            height: 240px;
+            height: 350px;
             padding: 1.5rem;
         }
         &__title{
             color: #ffffff;
+            font-size: 24px;
+            line-height: 30px;
             margin: 0;
         }
         &__text{
@@ -136,8 +139,8 @@
             justify-content: space-between;
             list-style: none;
             padding: 0;
-            margin: 0 0 1rem 0;
-            width: calc(100vw - 2rem);        
+            margin: .5rem 0 1.5rem 0;
+            width: calc(100vw - 250px);        
         }
         &__genres{
             display: flex;
