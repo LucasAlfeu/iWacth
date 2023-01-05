@@ -4,7 +4,7 @@ import { AiFillStar } from "react-icons/ai";
 import { MdBookmark, MdBookmarkBorder } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import { useRecoilValue } from "recoil";
-import { useMovieList, useFavoriteProgram, useLatestList, useOnTheArirtList, useTopRatedList } from "state/atom";
+import { useMovieList, useFavoriteProgram, useLatestList, useOnTheArirtList, useTopRatedList, usePlayingNowList } from "state/atom";
 import useTopMovie from "state/hook/useProgram";
 import styles from "./Card.module.scss"
 
@@ -19,6 +19,7 @@ export default function Card({ reference, title}: ICard) {
     const latestList = useRecoilValue(useLatestList)
     const onTheAirListSeries = useRecoilValue(useOnTheArirtList)
     const topRatedList = useRecoilValue(useTopRatedList)
+    const playingNow = useRecoilValue(usePlayingNowList)
     
     let listaDeProgramas = movieList
     if (title == 'Lançamentos'){
@@ -30,8 +31,9 @@ export default function Card({ reference, title}: ICard) {
     if (title == 'Mais Votados'){
         listaDeProgramas = topRatedList
     }
-    
-
+    if (title == 'No Cinema'){
+        listaDeProgramas = playingNow
+    }
     const favoriteProgram = useRecoilValue(useFavoriteProgram)
     const { favoritar } = useTopMovie({title})
 

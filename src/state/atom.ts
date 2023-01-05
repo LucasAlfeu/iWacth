@@ -56,6 +56,10 @@ export const useTopRatedList = atom<IProgram[]>({
     key: 'useTopRatedList',
     default: []
 })
+export const usePlayingNowList = atom<IProgram[]>({
+    key: 'usePlayingNowList',
+    default: []
+})
 
 export const useUrlState = atom<string>({
     key: 'useUrlState',
