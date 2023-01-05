@@ -88,7 +88,3 @@ export const useDetailsState = atom<IProgram>({
         revenue: 0
     }
 })
-export const useGenresListState = atom<string[]>({
-    key: 'useGenresListatate',
-    default: []
-})
