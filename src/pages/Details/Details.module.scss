@@ -1,27 +1,27 @@
 @media (min-width: 360px) and (max-width: 768px){
     .container{
-        margin: 0;
-        padding: 0;
         gap: 0;
         height: fit-content;
+        margin: 0;
+        padding: 0;
         &__backdrop{
-            width: 100vw;
             height: auto;
             margin: 0;
             padding: 0;
             object-fit: contain;
+            width: 100vw;
         }
     }
     .details{   
-        background: #000f26;     
-        display: flex;
-        color: #ffffff;
-        flex-direction: column;
-        height: auto;
         align-items: center;
+        background: #000f26;     
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
         justify-content: center;
-        padding: 1rem;
+        height: auto;
         margin: 0;
+        padding: 1rem;
         &__back{
             align-items: flex-end;
             color: #ffffff;
@@ -44,54 +44,115 @@
             margin: 0;
         }
         &__text{
-            text-align: justify;
-            padding: 1rem 0;
             font-size: 16px;
             line-height: 24px;
-            text-indent: 2rem;
             margin: 0;
+            padding: 1rem 0;
+            text-align: justify;
+            text-indent: 2rem;
         }
         &__list{
-            list-style: none;
+            align-items: center;
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            margin: 0 0 1rem 0;
-            padding: 0;
-            width: calc(100vw - 2rem);        }
-        &__genres{
             list-style: none;
+            padding: 0;
+            margin: 0 0 1rem 0;
+            width: calc(100vw - 2rem);        
+        }
+        &__genres{
             display: flex;
             flex-wrap: wrap;
             gap: 1.5rem;
-            margin: 0;
-            padding: 0;
             justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
             width: calc(100vw - 1rem);
         }
         &__genreItem{
-            padding: 0.3rem 0.5rem;
             background: #004DBF;
             border-radius: 5px;
+            padding: 0.3rem 0.5rem;
         }
     }
-    .about{
-        background: #000f26;
-        color:#ffffff ;
+}
+@media (min-width: 769px) and (max-width: 1440px){
+    .container{
+        gap: 0;
+        height: fit-content;
+        margin: 0;
+        padding: 0;
+        &__backdrop{
+            height: auto;
+            margin: 0;
+            padding: 0;
+            object-fit: contain;
+            width: 100vw;
+        }
+    }
+    .details{   
+        align-items: center;
+        background: #000f26;     
+        color: #ffffff;
         display: flex;
         flex-direction: column;
-        text-align: center;
-        margin-top: 2rem;
+        justify-content: center;
+        height: auto;
+        margin: 0;
+        padding: 1rem;
+        &__back{
+            align-items: flex-end;
+            color: #ffffff;
+            background: transparent;
+            border: none;
+            display: flex;
+            margin-left: 1rem;
+            width: calc(100vw - 1rem);        
+        }
+        &__arrow{
+            padding-right: .3rem;
+            transform: scale(1.5);
+        }
+        &__poster{
+            height: 240px;
+            padding: 1.5rem;
+        }
         &__title{
+            color: #ffffff;
             margin: 0;
         }
-        &__item{
-            margin: 0;
-            text-align: left;
-            list-style: none;
+        &__text{
+            font-size: 16px;
             line-height: 24px;
+            margin: 0;
+            padding: 1rem 0;
+            text-align: justify;
+            text-indent: 2rem;
+        }
+        &__list{
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1rem 0;
+            width: calc(100vw - 2rem);        
+        }
+        &__genres{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+            list-style: none;
             padding: 0;
             margin: 0;
+            width: calc(100vw - 1rem);
+        }
+        &__genreItem{
+            background: #004DBF;
+            border-radius: 5px;
+            padding: 0.3rem 0.5rem;
         }
     }
 }

@@ -7,45 +7,12 @@ import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
 import { useDetailsState } from 'state/atom';
 import styles from './Details.module.scss';
 import { HiArrowLongLeft } from "react-icons/hi2";
+import useDetails from 'state/hook/useDetails';
 
 export default function Details() {
-    const { id } = useParams()
-    const navigate = useNavigate()
-
-    const setProgram = useSetRecoilState(useDetailsState)
+    const {dataFormat, navigate} = useDetails()
     const program = useRecoilValue(useDetailsState)
-    // console.log(program)
-
-    useEffect(() => {
-        axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${env.API_KEY}&language=pt-BR`)
-            .then((res) => {
-                // console.log(res)
-                setProgram(res.data)
-            })
-            .catch((err) => {
-
-            })
-        axios.get(`https://api.themoviedb.org/3/movie/${id}/watch/providers?api_key=${env.API_KEY}&language=pt-BR`)
-            .then(res => {
-                if (res.data.results.BR) {
-                    console.log(res.data.results.BR)
-                } else {
-                    console.log('Não está disponivel nos Servidores brasileiros')
-                    console.log(res.data)
-                }
-            })
-            .catch(err => {
-                console.log(err)
-            })
-    }, [])
-    const dataFormat = (data: string) => {
-        const arr = data.split('-')
-        const ano = arr[0]
-        const mes = arr[1]
-        const dia = arr[2]
-
-        return (`${dia}/${mes}/${ano}`)
-    }
+    
     const data = dataFormat(program.release_date)
     return (
         <>
