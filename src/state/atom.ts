@@ -60,7 +60,10 @@ export const usePlayingNowList = atom<IProgram[]>({
     key: 'usePlayingNowList',
     default: []
 })
-
+export const useSimilarMoviesList = atom<IProgram[]>({
+    key: 'useSimilarMoviesList',
+    default: []
+})
 export const useUrlState = atom<string>({
     key: 'useUrlState',
     default: ''

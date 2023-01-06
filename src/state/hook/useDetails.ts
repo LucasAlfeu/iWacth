@@ -31,7 +31,7 @@ const useDetails = () => {
     }
     return {
         dataFormat,
-        navigate
+        navigate, id
     }
 }
 

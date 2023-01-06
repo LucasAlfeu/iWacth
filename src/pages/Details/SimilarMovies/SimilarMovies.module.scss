@@ -1,0 +1,13 @@
+.similarMovies{
+    &__list{
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+    &__poster{
+        width: 190px;
+    }
+}

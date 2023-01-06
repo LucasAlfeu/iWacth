@@ -5,6 +5,7 @@ import { MdBookmark, MdBookmarkBorder } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import { useMovieList, useFavoriteProgram, useLatestList, useOnTheArirtList, useTopRatedList, usePlayingNowList } from "state/atom";
+import useNavigateDetails from "state/hook/useNavigateDetails";
 import useTopMovie from "state/hook/useProgram";
 import styles from "./Card.module.scss"
 
@@ -34,13 +35,11 @@ export default function Card({ reference, title}: ICard) {
     if (title == 'No Cinema'){
         listaDeProgramas = playingNow
     }
+
     const favoriteProgram = useRecoilValue(useFavoriteProgram)
     const { favoritar } = useTopMovie({title})
 
-    const navigate = useNavigate()
-    const goDetails = (program: IProgram) => {
-        navigate(`/details/${program.id}`, { state: { program }, replace: true });
-    }
+    const { goDetails } = useNavigateDetails()
 
     return (
         <>

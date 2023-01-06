@@ -8,9 +8,10 @@ import { useDetailsState } from 'state/atom';
 import styles from './Details.module.scss';
 import { HiArrowLongLeft } from "react-icons/hi2";
 import useDetails from 'state/hook/useDetails';
+import SimilarMovies from './SimilarMovies';
 
 export default function Details() {
-    const { dataFormat, navigate } = useDetails()
+    const { dataFormat, navigate, id } = useDetails()
     const program = useRecoilValue(useDetailsState)
 
     const data = dataFormat(program.release_date)
@@ -36,6 +37,7 @@ export default function Details() {
                 <ul className={styles.details__genres}>{program.genres.map(genre =>
                     <li className={styles.details__genreItem} key={genre.name}>{genre.name}</li>)}
                 </ul>
+                <SimilarMovies idMovie={id} />
             </section>
         </>
     )
