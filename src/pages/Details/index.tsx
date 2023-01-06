@@ -26,7 +26,6 @@ export default function Details() {
             <section className={styles.details}>
                 <div className={styles.box1}>
                     <img className={styles.details__poster} src={`https://image.tmdb.org/t/p/original/${program.poster_path}`} alt={`Poster do filome ${program.title}`} />
-                    <FavoriteButton program={program} />
                 </div>
                 <div className={styles.box2}>
                     <h2 className={styles.details__title}>{program.title}</h2>
