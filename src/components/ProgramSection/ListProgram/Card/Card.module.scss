@@ -30,16 +30,6 @@
             margin: 0;
             padding: 0;
         }
-        
-        &__like{
-            height: 20px;
-            width: 20px;
-        }
-        &__favorite{
-            background: none;
-            border: none;
-            color: #ffffff;
-        }
     }
     .lista::-webkit-scrollbar{
        display: none;

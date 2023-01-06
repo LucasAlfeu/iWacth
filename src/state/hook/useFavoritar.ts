@@ -16,6 +16,7 @@ const useFavoritar = () => {
             setFavoriteProgram([...favoriteMovies])
         }
     }
+    return { favoritar }
 }
 
 export default useFavoritar

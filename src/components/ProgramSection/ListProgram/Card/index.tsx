@@ -1,10 +1,11 @@
+import FavoriteButton from "components/FavoriteButton";
 import { IProgram } from "interface/IProgram";
 import React, { RefObject } from "react";
 import { AiFillStar } from "react-icons/ai";
-import { MdBookmark, MdBookmarkBorder } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import { useMovieList, useFavoriteProgram, useLatestList, useOnTheArirtList, useTopRatedList, usePlayingNowList } from "state/atom";
+import useFavoritar from "state/hook/useFavoritar";
 import useNavigateDetails from "state/hook/useNavigateDetails";
 import useTopMovie from "state/hook/useProgram";
 import styles from "./Card.module.scss"
@@ -35,9 +36,7 @@ export default function Card({ reference, title}: ICard) {
     if (title == 'No Cinema'){
         listaDeProgramas = playingNow
     }
-
-    const favoriteProgram = useRecoilValue(useFavoriteProgram)
-    const { favoritar } = useTopMovie({title})
+    const {  } = useTopMovie({title})
 
     const { goDetails } = useNavigateDetails()
 
@@ -49,9 +48,7 @@ export default function Card({ reference, title}: ICard) {
                         <img onClick={() => goDetails(program)} className={styles.lista__poster} src={`https://image.tmdb.org/t/p/original/${program.poster_path}`} alt={program.title} />
                         <div className={styles.lista__container}>
                             <span className={styles.lista__span}><AiFillStar className={styles.lista__star} />{program.vote_average.toFixed(1)}</span>
-                            <button className={styles.lista__favorite} onClick={() => favoritar(program)}>
-                                {favoriteProgram.find(element => element === program) ? <MdBookmark className={styles.lista__like} /> : <MdBookmarkBorder className={styles.lista__like} />}
-                            </button>
+                            <FavoriteButton program={program} />
                         </div>
                     </li>
                 )}

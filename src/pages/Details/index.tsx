@@ -9,6 +9,7 @@ import styles from './Details.module.scss';
 import { HiArrowLongLeft } from "react-icons/hi2";
 import useDetails from 'state/hook/useDetails';
 import SimilarMovies from './SimilarMovies';
+import FavoriteButton from 'components/FavoriteButton';
 
 export default function Details() {
     const { dataFormat, navigate, id } = useDetails()
@@ -25,6 +26,7 @@ export default function Details() {
             <section className={styles.details}>
                 <div className={styles.box1}>
                     <img className={styles.details__poster} src={`https://image.tmdb.org/t/p/original/${program.poster_path}`} alt={`Poster do filome ${program.title}`} />
+                    <FavoriteButton program={program} />
                 </div>
                 <div className={styles.box2}>
                     <h2 className={styles.details__title}>{program.title}</h2>
@@ -37,8 +39,8 @@ export default function Details() {
                 <ul className={styles.details__genres}>{program.genres.map(genre =>
                     <li className={styles.details__genreItem} key={genre.name}>{genre.name}</li>)}
                 </ul>
-                <SimilarMovies idMovie={id} />
             </section>
+            <SimilarMovies idMovie={id} />
         </>
     )
 }
