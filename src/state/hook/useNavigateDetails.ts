@@ -5,6 +5,7 @@ const useNavigateDetails = () => {
     const navigate = useNavigate()
     const goDetails = (program: IProgram) => {
         navigate(`/details/${program.id}`, { state: { program }, replace: true });
+        console.log(program.title)
     }
 
     return {goDetails}
